@@ -1,0 +1,10 @@
+{
+    "name": "payloadsecret.io",
+    "short_name": "payloadsecret",
+    "description": "Generate secure 32-byte random secrets for your Payload instance.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#09090b",
+    "theme_color": "#09090b",
+    "version": "1.0.0"
+  }
