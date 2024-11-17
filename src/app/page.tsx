@@ -186,6 +186,16 @@ export default buildConfig({
               </motion.div>
             )}
           </AnimatePresence>
+          <div className="pt-4 text-center">
+            <a 
+              href="https://emnt.co" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-white transition-colors text-sm"
+            >
+              ♥ emnt.co
+            </a>
+          </div>
         </div>
       </div>
     </main>
