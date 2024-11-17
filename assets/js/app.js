@@ -17,12 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
     eyeIcon: document.getElementById("eyeIcon"),
   };
 
+  // Track page engagement time
+  let startTime = Date.now();
+  window.addEventListener("beforeunload", () => {
+    const timeSpent = Math.round((Date.now() - startTime) / 1000);
+    gtag("event", "time_spent", {
+      event_category: "Engagement",
+      event_label: "Time on Page",
+      value: timeSpent,
+    });
+  });
+
   function generateSecret() {
     const array = new Uint8Array(32);
     crypto.getRandomValues(array);
     state.secret = btoa(String.fromCharCode(...array));
     updateSecretDisplay();
     elements.secretContainer.classList.remove("hidden");
+
+    // Track secret generation
+    gtag("event", "generate_secret", {
+      event_category: "Interaction",
+      event_label: "Generate Secret",
+    });
   }
 
   function updateSecretDisplay() {
@@ -36,11 +53,23 @@ document.addEventListener("DOMContentLoaded", () => {
     state.showSecret = !state.showSecret;
     updateSecretDisplay();
     elements.eyeIcon.textContent = state.showSecret ? "🙈" : "🙉";
+
+    // Track secret visibility toggle
+    gtag("event", "toggle_visibility", {
+      event_category: "Interaction",
+      event_label: state.showSecret ? "Show Secret" : "Hide Secret",
+    });
   }
 
   function toggleUsage() {
     state.showUsage = !state.showUsage;
     elements.usageInfo.classList.toggle("hidden");
+
+    // Track usage info toggle
+    gtag("event", "toggle_usage", {
+      event_category: "Interaction",
+      event_label: state.showUsage ? "Show Usage" : "Hide Usage",
+    });
   }
 
   elements.generateBtn.addEventListener("click", generateSecret);
