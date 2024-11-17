@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     showUsage: false,
   };
 
+  window.getSecret = () => state.secret;
+
   const elements = {
     generateBtn: document.getElementById("generateBtn"),
     usageBtn: document.getElementById("usageBtn"),

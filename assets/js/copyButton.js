@@ -1,7 +1,6 @@
 class CopyButton {
-  constructor(buttonElement, getValue) {
+  constructor(buttonElement) {
     this.button = buttonElement;
-    this.getValue = getValue;
     this.copyIcon = this.button.querySelector(".icon");
     this.initialIcon = this.copyIcon.textContent;
     this.setupEventListeners();
@@ -9,7 +8,9 @@ class CopyButton {
 
   async copyToClipboard() {
     try {
-      const value = this.getValue();
+      const value = window.getSecret();
+      if (!value) return;
+
       await navigator.clipboard.writeText(value);
       this.showCopiedFeedback();
     } catch (err) {
@@ -31,8 +32,5 @@ class CopyButton {
 
 document.addEventListener("DOMContentLoaded", () => {
   const copyBtn = document.getElementById("copyBtn");
-  new CopyButton(
-    copyBtn,
-    () => document.querySelector("#secretField").textContent
-  );
+  new CopyButton(copyBtn);
 });
