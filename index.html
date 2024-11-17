@@ -10,6 +10,16 @@
     />
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
     <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KTZ04YFHP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-8KTZ04YFHP');
+    </script>
   </head>
   <body>
     <main>
@@ -69,8 +79,7 @@ import { buildConfig } from 'payload/config';
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET,
   // ... rest of your config
-});
-</pre>
+});</pre>
           </div>
         </div>
 
