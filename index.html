@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>payloadsecret.io - Generate Secure Payload Secrets</title>
+    <title>Payload Secret Generator</title>
     <meta
       name="description"
       content="Generate secure 32-byte random secrets for your Payload instance."
@@ -30,7 +30,7 @@
         <div class="header">
           <h1>Can you keep a secret?</h1>
           <p>
-            Generate a secure 32-byte random secret for your Payload instance.
+            Generate a random 32-byte, base64 secret for your Payload instance.
           </p>
         </div>
 
@@ -57,7 +57,7 @@
           <div class="usage-section">
             <h2>Development</h2>
             <p>Add the secret to your <code>.env</code> file:</p>
-            <pre>PAYLOAD_SECRET=your_generated_secret_here</pre>
+            <pre>PAYLOAD_SECRET="your_generated_secret_here"</pre>
           </div>
 
           <div class="usage-section">
@@ -87,7 +87,7 @@ export default buildConfig({
         </div>
 
         <div class="footer">
-          <a href="https://emnt.co" target="_blank" rel="noopener noreferrer">♥ emnt.co</a>
+          <a href="https://github.com/emntco/payloadsecret.io" target="_blank" rel="noopener noreferrer">♥ emnt.co</a>
         </div>
       </div>
     </main>
