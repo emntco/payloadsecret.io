@@ -1,3 +1,3 @@
 # payloadsecret.io
 
-Generate secure 32-byte random secrets for your Payload instance.
+Generate random 32-byte, base64 secrets for your Payload instance.
